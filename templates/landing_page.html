@@ -1,0 +1,23 @@
+<div class="grid grid-cols-7">
+    <div class="col-span-4 flex items-center justify-center">
+        <div class="flex flex-col items-start">
+            <h1
+                class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">
+                Short links, big results</h1>
+            <p class="pr-10 mb-6 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">Bruce.ly a URL
+                shortener built with powerful tools to help you grow and protect your brand.</p>
+            <button onclick="window.location.href={% url 'dashboard' %}"
+                class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
+                <span
+                    class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                    Get Started for free
+                </span>
+            </button>
+
+        </div>
+    </div>
+    <div class="col-span-3">
+        {% load static %}
+        <img class="w-5/6" src="{% static 'hero.png' %}" alt="">
+    </div>
+</div>
