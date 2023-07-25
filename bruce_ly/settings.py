@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-+*h+(cwrw7dbuu)cnzn)0vgu!n&53j!l(iv4u5u(%hk!7%pa+p"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -134,4 +134,4 @@ COMPRESS_ROOT = BASE_DIR / "static"
 COMPRESS_ENABLED = True
 STATICFILES_FINDERS = ("compressor.finders.CompressorFinder",)
 # for vercel
-ALLOWED_HOSTS = [".vercel.app", ".now.sh"]
+# ALLOWED_HOSTS = [".vercel.app", ".now.sh"]
