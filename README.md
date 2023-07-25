@@ -23,8 +23,8 @@ Bruce.ly an URL shortener web application using Django Tailwind and Flowbite
 
 First clone the repository from Github and switch to the new directory:
 
-    $ git clone git@github.com/USERNAME/{{ project_name }}.git
-    $ cd {{ project_name }}
+    $ git clone git@github.com/Obaidur1/bruce_ly-url-shortener.git
+    $ cd bruce_ly-url-shortener
     
 Activate the virtualenv for your project.
     
