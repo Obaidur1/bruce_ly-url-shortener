@@ -35,10 +35,10 @@
                             </path>
                         </svg>
                     </button>
-                    <a href="{% url 'home' %}" class="flex ml-2 md:mr-24">
-                        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="FlowBite Logo" />
-                        <span
-                            class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Flowbite</span>
+                    <a href="{% url 'home' %}" class="flex items-center">
+                        {% load static %}
+                        <img src="{% static 'logo.jpeg' %}" class="h-8 mr-3" alt="Flowbite Logo" />
+                        <span class="self-center text-2xl font-bold whitespace-nowrap">Bruce.ly</span>
                     </a>
                 </div>
                 <div class="flex items-center">
@@ -188,8 +188,12 @@
 
     <div class="p-4 sm:ml-64">
         <div class="p-4 border-2 border-gray-200 rounded-lg dark:border-gray-700 mt-14">
-            {% block content %}
 
+            {% block content %}
+            {% if user.is_authenticated %}
+            <p>Welcome, {{ user.username }}!</p>
+            <p>Member since, {{ user.date_joined }}!</p>
+            {% endif %}
             {% endblock content%}
         </div>
     </div>
