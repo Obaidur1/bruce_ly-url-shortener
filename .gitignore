@@ -12,4 +12,5 @@ CACHE/
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+*.sqlite3
 
