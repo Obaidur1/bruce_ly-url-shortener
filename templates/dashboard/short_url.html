@@ -3,48 +3,51 @@
 <div class="bg-white m-5 p-5 rounded-xl">
     <h2 class="text-3xl font-bold my-3 tracking-wider text-gray-700 ">Shorten a long link</h2>
     <h5 class="mb-2 text-xl font-bold tracking-wide text-gray-700">Paste a long URL</h5>
-    <div class="mb-6">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="mb-6">
 
-        <input type="url" id="url"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="company.com" required>
-    </div>
-    <div class="grid grid-cols-6">
-        <h5 class="col-span-2 mb-2 text-xl font-bold tracking-wide text-gray-700">Domain</h5>
-        <h5 class="col-span-4 mb-2 text-xl font-bold tracking-wide text-gray-700">Enter a back-half (optional)</h5>
-    </div>
-    <div class="grid grid-cols-6">
-        <div class="flex col-span-2">
-            <input type="url" id="website"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="bruce.ly" disabled>
-            <div class="mx-5 text-2xl">/</div>
+            <input type="url" name="long_url"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="company.com" required>
         </div>
-        <input type="url" id="website"
-            class="col-span-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-2/4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="abcd" required>
-    </div>
+        <div class="grid grid-cols-6">
+            <h5 class="col-span-2 mb-2 text-xl font-bold tracking-wide text-gray-700">Domain</h5>
+            <h5 class="col-span-4 mb-2 text-xl font-bold tracking-wide text-gray-700">Enter a back-half (optional)</h5>
+        </div>
+        <div class="grid grid-cols-6">
+            <div class="flex col-span-2">
+                <input type="url" name="long_url"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="bruce.ly" disabled>
+                <div class="mx-5 text-2xl">/</div>
+            </div>
+            <input type="text" name="short_url"
+                class="col-span-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-2/4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="abcd" required>
+        </div>
 
-    <div class="flex bg-green-100 text-lg my-5 p-5 rounded-lg"><span class="px-2"><svg
-                xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <g clip-path="url(#clip0_2222_25302)">
-                    <path
-                        d="M15.8333 7.49992L16.8749 5.20825L19.1666 4.16658L16.8749 3.12492L15.8333 0.833252L14.7916 3.12492L12.4999 4.16658L14.7916 5.20825L15.8333 7.49992ZM9.58325 7.91658L7.49992 3.33325L5.41658 7.91658L0.833252 9.99992L5.41658 12.0833L7.49992 16.6666L9.58325 12.0833L14.1666 9.99992L9.58325 7.91658ZM15.8333 12.4999L14.7916 14.7916L12.4999 15.8333L14.7916 16.8749L15.8333 19.1666L16.8749 16.8749L19.1666 15.8333L16.8749 14.7916L15.8333 12.4999Z"
-                        fill="#11BECF"></path>
-                </g>
-                <defs>
-                    <clipPath id="clip0_2222_25302">
-                        <rect width="20" height="20" fill="white"></rect>
-                    </clipPath>
-                </defs>
-            </svg> </span> End your link with words that will make it unique</div>
-    <a href="{% url 'dashboard' %}"
-        class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
-        <span
-            class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+        <div class="flex bg-green-100 text-lg my-5 p-5 rounded-lg"><span class="px-2"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <g clip-path="url(#clip0_2222_25302)">
+                        <path
+                            d="M15.8333 7.49992L16.8749 5.20825L19.1666 4.16658L16.8749 3.12492L15.8333 0.833252L14.7916 3.12492L12.4999 4.16658L14.7916 5.20825L15.8333 7.49992ZM9.58325 7.91658L7.49992 3.33325L5.41658 7.91658L0.833252 9.99992L5.41658 12.0833L7.49992 16.6666L9.58325 12.0833L14.1666 9.99992L9.58325 7.91658ZM15.8333 12.4999L14.7916 14.7916L12.4999 15.8333L14.7916 16.8749L15.8333 19.1666L16.8749 16.8749L19.1666 15.8333L16.8749 14.7916L15.8333 12.4999Z"
+                            fill="#11BECF"></path>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_2222_25302">
+                            <rect width="20" height="20" fill="white"></rect>
+                        </clipPath>
+                    </defs>
+                </svg> </span> End your link with words that will make it unique</div>
+        <button type="submit" name="link_submit"
+            class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
+            <span
+                class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
 
-            Get your link
-        </span>
-    </a>
+                Get your link
+            </span>
+        </button>
+    </form>
 </div>
 {% endblock content %}
